@@ -5,9 +5,10 @@ from home import models
 from django.core.mail import send_mail
 import random
 import json
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
-
+@csrf_exempt
 def home(request):
     
     if request.method == 'GET':
@@ -281,6 +282,7 @@ def home(request):
         except:
             return render(request, 'home.html', {'email' : email, 'is_doctor_verified' : is_doctor_verified, 'is_site_admin' : is_site_admin, 'display_med_posts' : False  } )
 
+@csrf_exempt
 def logout(request):
     request.session['email'] = None
     request.session['email_already'] = None
@@ -289,7 +291,7 @@ def logout(request):
     request.session['is_site_admin'] = None
     return redirect('home')
 
-
+@csrf_exempt
 def medposting(request):
     email = request.session.get('email')
     try:
@@ -309,7 +311,7 @@ def medposting(request):
         return redirect('home')
 
 
-
+@csrf_exempt
 def signup(request):
     if request.method == 'GET':
         return render(request, 'sign_up.html')
@@ -347,7 +349,7 @@ def signup(request):
 
             return redirect('home')
 
-
+@csrf_exempt
 def login(request):
     if request.method == 'GET':
         email_already = None
@@ -383,7 +385,7 @@ def login(request):
 
         return render(request, 'login.html', {'error_message': error_message, 'email_already' : email_already})
 
-  
+@csrf_exempt  
 def forgot_pass(request):
     if request.method == 'GET':
         email_already = None
@@ -419,7 +421,7 @@ def forgot_pass(request):
             request.session['error_message'] = error_message
             return redirect('forgot_pass')
 
-
+@csrf_exempt
 def reset_pass(request):
     if request.method == 'GET':
         email_already = None
@@ -464,7 +466,7 @@ def reset_pass(request):
             request.session['email_already'] = email
             return redirect('reset_pass')
 
-
+@csrf_exempt
 def like(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -494,7 +496,7 @@ def like(request):
             return redirect('home')
 
 
-        
+@csrf_exempt        
 def best_docs(request):    
     if request.method == 'GET':
         try:    

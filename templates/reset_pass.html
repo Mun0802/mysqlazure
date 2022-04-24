@@ -26,7 +26,7 @@
         </a>
     </div>
     <form action="/reset_pass" method="post">
-        {% csrf_token %}
+
         {% if error_message %}
         <div class="alerting_error" role="alert">
             {{error_message}}
