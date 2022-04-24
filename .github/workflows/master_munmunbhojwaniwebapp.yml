@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'munmunbhojwaniwebapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4A777721C4084860A86081BCF7B82E65 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5FDB9A8685AD43E981A362FA9CEE873A }}
