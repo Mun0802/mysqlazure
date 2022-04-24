@@ -63,9 +63,54 @@
         <br>
     </form>
 
-    {% load static %}
-    <script src="{% static 'js/reset_pass.js'%}"></script>
-    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    <style>
+        .med_post_div {
+            border: 3px;
+            border-style: solid;
+            border-color: rgb(79, 141, 150);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .med_post_text_div {
+            border: 3px;
+            border-style: solid;
+            border-color: rgb(79, 141, 150);
+            border-radius: 10px;
+        }
+
+        .inline {
+            display: inline-block;
+            margin: 10px;
+
+        }
+
+        a {
+            color: rgb(223, 62, 156);
+            text-decoration: none;
+            /* no underline */
+        }
+    </style>
+
+    <script>
+        var submit_button = document.getElementById("submit_button");
+        submit_button.style.display = "none";
+
+        var password = document.getElementById("password");
+        var confirm_password = document.getElementById("confirm_password");
+
+        function comparing_passwords() {
+            console.log('hello');
+            if (password.value == confirm_password.value) {
+                submit_button.style.display = "block";
+            }
+            else {
+                submit_button.style.display = "none";
+            }
+        };
+    </script>
+
 </body>
 
 </html>
