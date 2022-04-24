@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z88$b$%r#=@@8+1s1v5ief8(b4s3ffp)g@r65x#1pi!&3u3xp*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -145,3 +145,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'whatdoesthedocsayproject@gmail.com'
 EMAIL_HOST_PASSWORD = 'munmunbhojwaniprojectazure'
+
+
+CSRF_TRUSTED_ORIGINS = ['https://munmunbhojwaniwebapp.azurewebsites.net/']
