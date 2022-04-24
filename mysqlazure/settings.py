@@ -147,4 +147,4 @@ EMAIL_HOST_USER = 'whatdoesthedocsayproject@gmail.com'
 EMAIL_HOST_PASSWORD = 'munmunbhojwaniprojectazure'
 
 
-CSRF_TRUSTED_ORIGINS = ['https://munmunbhojwaniwebapp.azurewebsites.net/']
+CSRF_TRUSTED_ORIGINS = ["https://munmunbhojwaniwebapp.azurewebsites.net", "*"]
